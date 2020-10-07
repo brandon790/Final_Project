@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div>
+                <input autofocus class="form-control" type="text" name="username" placeholder="Username">
+            </div>
+            <div>
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+            <input type="submit" value="Login">
+        </form>
+    
+        Don't have an account? Register here.</a>
+    </head>
+    <br>
+    {% if user.is_authenticated %}
+        <a href="logout">Logout</a>
+        <br>
+        Only shows if authenticated
+    {% endif %}
+
+</html>
