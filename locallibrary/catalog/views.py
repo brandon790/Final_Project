@@ -34,3 +34,5 @@ def login_view(request):
             })
     else:
         return render(request, "catalog/login.html")
+
+        

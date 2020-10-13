@@ -1,6 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+div {
+    box-shadow: 0 0 0 3rem orangered;
+ 
+}
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+</style>
+</head>
+
 
         <form action="{% url 'login' %}" method="post">
             {% csrf_token %}
@@ -11,15 +52,25 @@
                 <input class="form-control" type="password" name="password" placeholder="Password">
             </div>
             <input type="submit" value="Login">
+            {% if user.is_authenticated %}
+            <br>
+            <a href="logout">Logout</a>
+            {% endif %}
         </form>
-    
-        Don't have an account? Register here.</a>
-    </head>
-    <br>
-    {% if user.is_authenticated %}
-        <a href="logout">Logout</a>
+
+        <nav>
+            <div class="topnav">
+                <a class="active" href="#home">Home</a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+              </div>
+        </nav>
         <br>
-        Only shows if authenticated
-    {% endif %}
+        Visit Us Today!
+
+
+        <img src="https://i.etsystatic.com/20533102/r/il/394213/2012538527/il_570xN.2012538527_2v59.jpg" alt="logo" style="width: 350px; margin-top: 25px; display: block; margin-left: auto; margin-right: auto">
+
 
 </html>
