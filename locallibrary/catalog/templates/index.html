@@ -3,22 +3,28 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+<div style="background-image: url(https://cdn.pixabay.com/photo/2020/03/25/21/05/pizza-4968645_1280.jpg); position: fixed;
+top: 0; 
+left: 0;
+width: 100%;
+height: 100%;">
+
+
 <style>
 
-div {
-    box-shadow: 0 0 0 3rem orangered;
- 
 }
 .topnav {
-  background-color: #333;
+  background-color: rgb(128, 7, 7);
   overflow: hidden;
   margin-top: 20px;
+  padding-left: 20px;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: #110101;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -29,21 +35,22 @@ div {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: rgb(192, 79, 4);
   color: black;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #c20000;
+  color: rgb(0, 0, 0);
 }
 
+.topnav  a{
+  background-color: #c2ae00;
+}
 </style>
 </head>
-
-
-        <form action="{% url 'login' %}" method="post">
+        <form action="{% url 'login' %}" method="post" style="padding-left: 20px; padding-top: 10px;">
             {% csrf_token %}
             <div>
                 <input autofocus class="form-control" type="text" name="username" placeholder="Username">
@@ -53,6 +60,7 @@ div {
             </div>
             <input type="submit" value="Login">
             {% if user.is_authenticated %}
+            Welcome, {{user}}!
             <br>
             <a href="logout">Logout</a>
             {% endif %}
@@ -61,16 +69,16 @@ div {
         <nav>
             <div class="topnav">
                 <a class="active" href="#home">Home</a>
-                <a href="#news">News</a>
+                <a href="#news">Menu</a>
                 <a href="#contact">Contact</a>
                 <a href="#about">About</a>
               </div>
         </nav>
         <br>
-        Visit Us Today!
+        <div>Our pizza is out of this world, visit us today!</div>
 
 
-        <img src="https://i.etsystatic.com/20533102/r/il/394213/2012538527/il_570xN.2012538527_2v59.jpg" alt="logo" style="width: 350px; margin-top: 25px; display: block; margin-left: auto; margin-right: auto">
-
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/45445ef4-477f-4cc9-a899-2eec3bacced7/ddnfdrt-80271be9-188f-4352-8deb-f608c094b06c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNDU0NDVlZjQtNDc3Zi00Y2M5LWE4OTktMmVlYzNiYWNjZWQ3XC9kZG5mZHJ0LTgwMjcxYmU5LTE4OGYtNDM1Mi04ZGViLWY2MDhjMDk0YjA2Yy5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.LnDoQfWDvGbRhP6SByJ4weFzWhVByGEDdpQVvWtmr1U" alt="logo" style="width: 350px; margin-top: 25px; display: block; margin-left: auto; margin-right: auto">
+        <img src="https://www.logolynx.com/images/logolynx/aa/aa447d29efca9cd878e07b3930f5dd83.jpeg" alt="logo3" style="width: 375px;padding-left: 1200px;">
 
 </html>
